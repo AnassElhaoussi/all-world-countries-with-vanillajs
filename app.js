@@ -3,13 +3,10 @@ const mainSection = document.querySelector(".main-section"),
 labelButton = mainSection.querySelector(".label button"),
 inputField = mainSection.querySelector("input"),
 regionsOptions = mainSection.querySelector(".options a"),
-countriesEl = document.querySelector(".countries-container")
-
+countriesEl = document.querySelector(".countries-container"),
+toggleBtn = document.querySelector(".modes")
 let api;
 
-labelButton.addEventListener('click' ,() => {
-    mainSection.classList.toggle("isactive")
-})
 
 const displayCountry = (countries) => {
 
@@ -59,6 +56,10 @@ const requestApi = () => {
     
 }
 
+const requestApiByField = () => {
+    api = ``
+}
+
 
 
 
@@ -73,6 +74,23 @@ const fetchData = () => {
 }
 
 requestApi()
+
+labelButton.addEventListener('click' ,() => {
+    mainSection.classList.toggle("isactive")
+})
+
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle("dark")
+})
+
+regionsOptions.forEach(option => {
+    option.addEventListener('click', () => {
+
+    })
+})
+
+
+
 
 
 

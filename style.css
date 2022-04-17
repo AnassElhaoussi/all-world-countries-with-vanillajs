@@ -5,6 +5,11 @@ html {
     font-size: 62.5%;
 }
 
+:root {
+    --background-el: hsl(0, 0%, 100%);
+    --color : hsl(0,100%,0);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,9 +23,17 @@ body {
     
 }
 
+body.dark {
+    background-color: hsl(207, 26%, 17%);
+    --color: hsl(0, 0%, 100%);
+    --background-el:  hsl(209, 23%, 22%);
+}
+
+
+
 .navigation {
     padding: 2rem 6rem;
-    background-color: white;
+    background-color: var(--background-el);
 
     
 }
@@ -33,6 +46,7 @@ body {
 .nav-container h2 {
     font-size: 2rem;
     font-weight: 800;
+    color: var(--color)
 }
 
 .modes {
@@ -41,15 +55,21 @@ body {
     font-size: 1.3rem;
     align-items: center;
     cursor: pointer;
+    color: var(--color)
     
 }
+
+
+
+
+
 
 .modes p  {
     font-weight: 700;
 }
 
 
-.wrapper {
+.main-section {
     padding: 4.5rem 6rem;
     
 }
@@ -71,8 +91,13 @@ body {
     min-width: 40%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     border-radius:0.6rem;
-    
+    background-color: var(--background-el);
+    color: var(--color);
 
+}
+
+.input-part input::placeholder {
+    color: var(--color);
 }
 
 .dropdown {
@@ -80,8 +105,9 @@ body {
     text-align: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     border-radius: 0.6rem;
-    background-color: white;
+    background-color: var(--background-el);
     z-index: 999;
+
 
 }
 
@@ -90,21 +116,22 @@ body {
     border: none;
     padding: 1.5rem 3rem;
     border-radius: 0.6rem;
-    background-color: white;
+    color: var(--color);
+    background-color: var(--background-el);
     cursor: pointer;
-
 
 }
 
 .options {
     position: relative;
     z-index: 999;
+    
 }
 
 .options a {
     display: none;
     justify-content: flex-start;
-    color: black;
+    color: var(--color);
     text-decoration: none;
     padding: 1rem 3rem;
     font-size: 1.2rem;
@@ -130,16 +157,17 @@ body {
 }
 
 .card {
-    background-color: white;
+    background-color: var(--background-el);
     border-radius: 0.6rem;
     padding: 0 0 4.5rem 0;
-    height: 33rem;
+    max-height: 30%;
     
 }
 
 .card img {
     max-width: 25rem;
     border-radius: 0.6rem 0.6rem 0 0;
+
 }
 
 .infos {
@@ -153,6 +181,7 @@ body {
 .infos h3 {
     font-size: 1.9rem;
     font-weight: 800;
+    color: var(--color)
 }
 
 .details {
@@ -160,12 +189,18 @@ body {
     flex-direction: column;
     gap: 0.3rem;
     font-size: 1.4rem;
-    font-weight: 700;
-    color: rgb(94, 94, 94);
+    font-weight: 600;
+    color: var(--color);
+    
+    
 }
 
 .detail {
     display: flex;
     gap: 0.4rem;
+}
+
+.detail p {
+    opacity: 0.8;
 }
 
