@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=League+Gothic&family=Lexend+Peta:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Smooch+Sans:wght@100;200;300;400;500;600;700;800;900&family=Staatliches&display=swap');
+
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif
+}
+
+body {
+    overflow-x: hidden;
+    background-color: hsl(0, 0%, 98%);
+    
+}
+
+.navigation {
+    padding: 2rem 6rem;
+    background-color: white;
+
+    
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-container h2 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.modes {
+    display: flex;
+    gap: 1.3rem;
+    font-size: 1.3rem;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.modes p  {
+    font-weight: 700;
+}
+
+
+.wrapper {
+    padding: 4.5rem 6rem;
+    
+}
+
+.input-part {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+
+
+
+.input-part input {
+    border: none;
+    outline: none;
+    padding: 1.3rem;
+    min-width: 40%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius:0.6rem;
+    
+
+}
+
+.dropdown {
+    min-width: 10%;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 0.6rem;
+    background-color: white;
+    z-index: 999;
+
+}
+
+
+.label button {
+    border: none;
+    padding: 1.5rem 3rem;
+    border-radius: 0.6rem;
+    background-color: white;
+    cursor: pointer;
+
+
+}
+
+.options {
+    position: relative;
+    z-index: 999;
+}
+
+.options a {
+    display: none;
+    justify-content: flex-start;
+    color: black;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    transition: 0.6s ease;
+
+}
+
+.main-section.isactive .options a {
+    display: flex;
+}
+
+.countries {
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+}
+
+.countries-container {
+    display: flex;
+    gap: 6rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.6rem;
+    padding: 0 0 4.5rem 0;
+    height: 33rem;
+    
+}
+
+.card img {
+    max-width: 25rem;
+    border-radius: 0.6rem 0.6rem 0 0;
+}
+
+.infos {
+    padding: 2rem 0 0 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    
+}
+
+.infos h3 {
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: rgb(94, 94, 94);
+}
+
+.detail {
+    display: flex;
+    gap: 0.4rem;
+}
+
