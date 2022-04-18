@@ -2,13 +2,13 @@
 const mainSection = document.querySelector(".main-section"),
 labelButton = mainSection.querySelector(".label button"),
 inputField = mainSection.querySelector("input"),
-regionsOptions = mainSection.querySelector(".options a"),
+regionsOptions = mainSection.querySelectorAll(".options a"),
 countriesEl = document.querySelector(".countries-container"),
 toggleBtn = document.querySelector(".modes")
 let api;
 
 
-const displayCountry = (countries) => {
+const displayCountry = countries => {
 
     countries.forEach(country => {
     const countryEl = document.createElement('div')
@@ -19,7 +19,7 @@ const displayCountry = (countries) => {
     countryEl.innerHTML = `
                 <img src="${country.flag}" alt="">
                 <div class="infos">
-                    <h3>${country.name}</h3>
+                    <h3 class="country-name">${country.name}</h3>
                     <div class="details">
                         <div class="population detail">
                             <span>Population:</span>
@@ -35,19 +35,15 @@ const displayCountry = (countries) => {
                         </div>
                     </div>
                 </div>
+   
 `
 
-    
-    
 
-
-    countriesEl.appendChild(countryEl)
-
-        
+    countriesEl.appendChild(countryEl)       
     });
 
-
 }
+
 
 
 const requestApi = () => {
@@ -55,13 +51,6 @@ const requestApi = () => {
     fetchData()
     
 }
-
-const requestApiByField = () => {
-    api = ``
-}
-
-
-
 
 
 const fetchData = () => {
@@ -75,6 +64,7 @@ const fetchData = () => {
 
 requestApi()
 
+
 labelButton.addEventListener('click' ,() => {
     mainSection.classList.toggle("isactive")
 })
@@ -83,16 +73,48 @@ toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle("dark")
 })
 
-regionsOptions.forEach(option => {
-    option.addEventListener('click', () => {
+inputField.addEventListener('input', e => {
+    const {value} = e.target
+    const countryName = document.querySelectorAll(".country-name")
+
+    countryName.forEach(name => {
+        console.log(name.innerHTML);
+        if(name.innerHTML.toLowerCase().includes(value.toLowerCase())){
+            name.parentElement.parentElement.style.display = "block"
+
+            
+        } else {
+            name.parentElement.parentElement.style.display = "none"
+
+        }
+        
 
     })
 })
 
+regionsOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        console.log(option.innerHTML);
+
+    const regionName = document.querySelectorAll(".region")
+
+    regionName.forEach(region => {
+        if(region.innerHTML.includes(option.innerHTML)){
+            region.parentElement.parentElement.parentElement.style.display = "block"
 
 
+        } else {
+            region.parentElement.parentElement.parentElement.style.display = "none"
 
+        }
+        
 
+    })
+        
+       
+        
 
+})
 
-
+})
+    

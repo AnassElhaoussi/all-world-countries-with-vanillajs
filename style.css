@@ -154,6 +154,7 @@ body.dark {
     gap: 6rem;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -161,7 +162,7 @@ body.dark {
     border-radius: 0.6rem;
     padding: 0 0 4.5rem 0;
     max-height: 30%;
-    
+     
 }
 
 .card img {
@@ -181,7 +182,8 @@ body.dark {
 .infos h3 {
     font-size: 1.9rem;
     font-weight: 800;
-    color: var(--color)
+    color: var(--color);
+
 }
 
 .details {
