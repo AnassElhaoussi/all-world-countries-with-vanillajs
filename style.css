@@ -19,7 +19,7 @@ html {
 
 body {
     overflow-x: hidden;
-    background-color: hsl(0, 0%, 98%);
+    background-color: rgb(241, 241, 241);
     
 }
 
@@ -136,8 +136,11 @@ body.dark {
     padding: 1rem 3rem;
     font-size: 1.2rem;
     transition: 0.6s ease;
+    cursor: pointer;
 
 }
+
+
 
 .main-section.isactive .options a {
     display: flex;
@@ -151,7 +154,7 @@ body.dark {
 
 .countries-container {
     display: flex;
-    gap: 6rem;
+    gap: 4rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -161,12 +164,15 @@ body.dark {
     background-color: var(--background-el);
     border-radius: 0.6rem;
     padding: 0 0 4.5rem 0;
-    max-height: 30%;
+    width: 28rem;
+    max-height: 35rem;
+    overflow: hidden;
+
      
 }
 
 .card img {
-    max-width: 25rem;
+    max-width: 28rem;
     border-radius: 0.6rem 0.6rem 0 0;
 
 }
@@ -193,8 +199,6 @@ body.dark {
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--color);
-    
-    
 }
 
 .detail {
@@ -206,3 +210,36 @@ body.dark {
     opacity: 0.8;
 }
 
+.active {
+    display: none;
+}
+
+.details-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 6rem;
+    justify-content: center;
+
+
+    
+}
+
+.details-container img {
+    width: 60%;
+    border-radius: 0.8rem;
+}
+
+.details-country-name {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    width: 60%;
+}
+
+.details-text {
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--color);
+}
