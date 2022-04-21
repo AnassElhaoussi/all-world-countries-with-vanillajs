@@ -70,6 +70,9 @@ const displayCountry = countries => {
 
 const displayLabel = country => {
     const modalText = document.querySelector(".modal-text")
+
+   
+
     modalText.innerHTML = `
                    <img src="${country.flag}" alt="">
                    
@@ -110,23 +113,35 @@ const displayLabel = country => {
                         </div>
                         <div class="lan">
                             <span>Languages:</span>
-                            <p>${country.languages[0].name} </p>
+                            <p>${country.languages[0].name}</p>
                         </div>
                      </div>
         
                       
-                   </div>
+                    </div>
                    <div class="border-countries">
                     <h2>Border countries :</h2>
+                    <div class="border-countries">
+                      <button>${country.borders}</button>
 
-                    <button>${country.borders}</button>
-                    <button></button>
-                    <button></button>
+                      
                     </div>
                    </div>
        
 
     `
+
+    if(country.borders == undefined){
+        document.querySelector(".border-countries button").innerHTML = "No border countries!"
+    }
+     
+
+
+    
+
+
+
+
 }
 
 
