@@ -5,7 +5,9 @@ inputField = mainSection.querySelector("input"),
 regionsOptions = mainSection.querySelectorAll(".options a:not(.all)"),
 countriesEl = document.querySelector(".countries-container"),
 toggleBtn = document.querySelector(".modes"),
-viewAll = document.querySelector(".all")
+viewAll = document.querySelector(".all"),
+modalContainer = document.querySelector(".modal-container"),
+backButton = document.querySelector(".modal-container button")
 
 let api;
 
@@ -42,17 +44,21 @@ const displayCountry = countries => {
                     </div>
                 </div>
 `
-countryEl.addEventListener('click', () => {
-    const detailsPage = document.querySelector(".details-container")
-     countriesEl.classList.add('active')
-     mainSection.classList.add("active")
-     detailsPage.classList.remove("active")
 
-    
-    displayDetailsPageCountry(country)
-    
+    countryEl.addEventListener('click', () => {
+        mainSection.classList.add("active")
+        countriesEl.classList.add("active")
+        modalContainer.classList.remove("active")
+        displayLabel(country)
+    })
+
+    backButton.addEventListener('click', () => {
+        mainSection.classList.remove("active")
+        countriesEl.classList.remove("active")
+        modalContainer.classList.add("active")
 
     })
+
     
 
     countriesEl.appendChild(countryEl)       
@@ -62,32 +68,69 @@ countryEl.addEventListener('click', () => {
 
 }
 
+const displayLabel = country => {
+    const modalText = document.querySelector(".modal-text")
+    modalText.innerHTML = `
+                   <img src="${country.flag}" alt="">
+                   
+                   <div class="modal-infos">
+                    <h1>${country.name}</h1>
+                    <div class="columns">
+                        <div class="col1">
+                            <div class="native">
+                                <span>Native Name:</span>
+                                <p>${country.nativeName}</p>
+                            </div>
+                            <div class="pop">
+                             <span>Population:</span>
+                             <p>${country.population}</p>
+                           </div>
+                           <div class="reg">
+                             <span>Region:</span>
+                             <p>${country.region}</p>
+                         </div>
+                         <div class="sub-reg">
+                             <span>Sub Region:</span>
+                             <p>${country.subregion}</p>
+                         </div>
+                        </div>
+                           
+                     <div class="col2">
+                        <div class="cap">
+                            <span>Capital:</span>
+                            <p>${country.capital}</p>
+                        </div>
+                        <div class="dom">
+                            <span>Top Level Domain:</span>
+                            <p>${country.topLevelDomain[0]}</p>
+                        </div>
+                        <div class="curr">
+                            <span>Currencies:</span>
+                            <p>${country.currencies[0].name}</p>
+                        </div>
+                        <div class="lan">
+                            <span>Languages:</span>
+                            <p>${country.languages[0].name} </p>
+                        </div>
+                     </div>
+        
+                      
+                   </div>
+                   <div class="border-countries">
+                    <h2>Border countries :</h2>
 
-const displayDetailsPageCountry = country => {
-    const detailsBody = document.querySelector(".details-text")
-    const detailsImage = document.querySelector(".details-container img")
-
-    detailsImage.src = country.flag
-
-    detailsBody.innerHTML = `
-    <h3 class="details-country-name">${country.name}</h3>
-                    <div class="population detail">
-                        <span>Population:</span>
-                        <p>${country.population}</p>
+                    <button>${country.borders}</button>
+                    <button></button>
+                    <button></button>
                     </div>
-                    <div class="region detail">
-                        <span>Region:</span>
-                        <p>${country.region}</p>
-                    </div>
-                    <div class="capital detail">
-                        <span>Capital:</span>
-                        <p>${country.capital}</p>
-                    </div>
+                   </div>
+       
 
     `
-
-    
 }
+
+
+
 
 
 
@@ -103,6 +146,9 @@ const fetchData = () => {
         return response.json()
     }).then(data => {
         displayCountry(data)
+        console.log(data)
+        
+
         
     })
 }
