@@ -109,7 +109,7 @@ const displayLabel = country => {
                         </div>
                         <div class="curr">
                             <span>Currencies:</span>
-                            <p>${country.currencies[0].name}</p>
+                            <p>${country.currencies.name}</p>
                         </div>
                         <div class="lan">
                             <span>Languages:</span>
@@ -134,18 +134,8 @@ const displayLabel = country => {
     if(country.borders == undefined){
         document.querySelector(".border-countries button").innerHTML = "No border countries!"
     }
-     
-
-
-    
-
-
-
 
 }
-
-
-
 
 
 
@@ -177,6 +167,7 @@ labelButton.addEventListener('click' ,() => {
 
 toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle("dark")
+    
 })
 
 inputField.addEventListener('input', e => {

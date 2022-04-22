@@ -219,19 +219,22 @@ body.dark {
 .modal {
     padding: 6rem 6rem;
     max-width: 100%;
+ 
 }
 
 
 .modal-text {
     display: flex;
     flex-wrap: wrap;
-    gap: 4rem;
+    gap: 8rem;
 }
 
 
 .modal-text img {
     max-width: 40%;
+    height: 40%;
     border-radius: 1rem;
+    
 }
 
 .modal-infos {
@@ -313,4 +316,92 @@ body.dark {
 
 .modal-container button:hover {
     transform: scale(1.1);
+}
+
+@media  screen and (max-width:1200px)
+ {
+     .modal-text {
+         flex-wrap: nowrap;
+     }
+
+     .modal-infos h1 {
+         min-width: 100%
+     }
+
+     .columns p, .columns span {
+         font-size: 1rem;
+     }
+
+    
+}
+
+
+
+@media screen and (max-width:800px){
+
+    .modal-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .modal-text img {
+        min-width: 40%;
+    }
+
+    .modal-infos h1 {
+        min-width: 100%;
+        font-size: 3rem;
+    }
+
+    .columns p , .columns span {
+        font-size: 1rem;
+    }
+    
+}
+
+@media screen and (max-width:700px){
+
+    .columns p , .columns span {
+        font-size: 1.6rem;
+    }
+
+    .modal-text {
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+ 
+    }
+
+    .modal-text img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width:500px){
+
+    .navigation {
+        padding: 2rem;
+    }
+
+    .nav-container h2 {
+        font-size: 2rem;
+    }
+
+    .dropdown {
+        min-width: 65%;
+        
+    }
+
+    .input-part {
+        display: flex;
+        gap: 2rem;
+    }
+
+    
+
+    .columns p , .columns span {
+        font-size: 1rem;
+    }
 }
