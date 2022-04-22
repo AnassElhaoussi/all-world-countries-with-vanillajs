@@ -364,14 +364,21 @@ body.dark {
 @media screen and (max-width:700px){
 
     .columns p , .columns span {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+    }
+    .columns {
+        flex-direction: column;
     }
 
     .modal-text {
         flex-wrap: wrap;
-        text-align: center;
-        align-items: center;
+        gap: 3rem;
  
+    }
+
+    .modal-infos {
+        align-items: center;
+        text-align: center;
     }
 
     .modal-text img {
@@ -402,6 +409,6 @@ body.dark {
     
 
     .columns p , .columns span {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }
